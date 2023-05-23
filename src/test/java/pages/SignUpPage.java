@@ -18,7 +18,6 @@ public class SignUpPage extends BasePage {
     Actions actions = new Actions(Driver.getDriver());
 
     public SignUpPage(WebDriver webDriver) {
-        super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 

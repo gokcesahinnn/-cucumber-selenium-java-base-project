@@ -7,7 +7,7 @@ import pages.BasePage;
 public class BaseSteps {
 
     private WebDriver webDriver = Hooks.webDriver;
-    BasePage basePage = new BasePage(webDriver);
+    BasePage basePage = new BasePage();
 
     public BaseSteps() {
     }

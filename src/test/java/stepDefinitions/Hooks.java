@@ -8,7 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import utilities.Driver;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import static utilities.Driver.getDriver;
 
