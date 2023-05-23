@@ -51,6 +51,7 @@ public class Hooks {
             // Senaryonun ekran görüntüsünü rapora ekle
             scenario.attach(screenshot, "image/png", screenshotName);
         }
+        Driver.closeDriver();
     }
 
     private void createFolder(String folderPath) {
@@ -68,7 +69,6 @@ public class Hooks {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Driver.closeDriver();
     }
 
 }
