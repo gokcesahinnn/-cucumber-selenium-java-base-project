@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage extends BasePage {
 
     public HomePage(WebDriver webDriver) {
-        super(webDriver);
         PageFactory.initElements(webDriver, this);
     }
 
