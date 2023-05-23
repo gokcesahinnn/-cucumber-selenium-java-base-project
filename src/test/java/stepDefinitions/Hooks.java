@@ -11,6 +11,7 @@ import utilities.Driver;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,7 @@ public class Hooks {
         webDriver = Driver.getDriver();
         webDriver.manage().deleteAllCookies();
         webDriver.manage().window().maximize();
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
     @After
