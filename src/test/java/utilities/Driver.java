@@ -25,6 +25,7 @@ public class Driver {
             switch (ConfigReader.getProperty("browser")) {
                 case "chrome":
                     ops.addArguments("--remote-allow-origins=*");
+                    if (ConfigReader.getProperty("headlessMode").equalsIgnoreCase("true")) ops.addArguments("--headless");
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(ops);
                     break;
@@ -32,7 +33,6 @@ public class Driver {
                     WebDriverManager.safaridriver().setup();
                     driver = new SafariDriver();
                     break;
-
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
