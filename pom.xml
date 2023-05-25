@@ -69,12 +69,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber3-jvm</artifactId>
-            <version>${allure.cucumber.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
             <version>${cucumber.reporting.version}</version>

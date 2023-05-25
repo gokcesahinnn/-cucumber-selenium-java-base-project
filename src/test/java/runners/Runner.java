@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"pretty", "json:target/cucumber.json"},
+        plugin = {"pretty", "json:target/cucumber.json", "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
         features = "src/test/resources/features",
         glue = "stepDefinitions",
         tags = "@regression",

@@ -14,9 +14,6 @@ import java.nio.file.Paths;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.concurrent.TimeUnit;
-
-import static utilities.Driver.getDriver;
 
 public class Hooks {
 
