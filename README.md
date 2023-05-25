@@ -49,3 +49,4 @@ Bu proje Java-Selenium-Cucumber Test Otomasyonu Projesi test otomasyonu base pro
 
 * Runner çalıştırılır.
 * Terminalden mvn verify komutu çalıştırılır.
+* Allure Report Generate --> allure serve allure-results 
