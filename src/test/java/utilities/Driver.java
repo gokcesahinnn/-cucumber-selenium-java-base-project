@@ -26,7 +26,7 @@ public class Driver {
                 case "chrome":
                     ops.addArguments("--remote-allow-origins=*");
                     if (ConfigReader.getProperty("headlessMode").equalsIgnoreCase("true")) ops.addArguments("--headless");
-                    WebDriverManager.chromedriver().setup();
+                    WebDriverManager.chromedriver().clearDriverCache().setup();
                     driver = new ChromeDriver(ops);
                     break;
                 case "safari":
