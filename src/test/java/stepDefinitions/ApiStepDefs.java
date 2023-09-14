@@ -12,13 +12,15 @@ public class ApiStepDefs {
     private Response response;
 
     @Given("^I make a GET request to \"([^\"]*)\"$")
-    public void iMakeAGetRequestTo(String endpoint) {
-        response = ApiUtils.sendGetRequest(endpoint);
+    public void iMakeAGetRequestTo(String endpoint) throws Exception {
+        response = ApiUtils.getRequest("https://reqres.in/api/users", "page=2");
     }
 
     @Then("^I should get a successful response$")
     public void iShouldGetASuccessfulResponse() {
         int statusCode = response.getStatusCode();
         assertEquals(200, statusCode);
+        String responseBody = response.getBody().asString();
     }
 }
+
