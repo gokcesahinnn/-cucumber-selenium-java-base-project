@@ -9,16 +9,17 @@ import static org.junit.Assert.assertEquals;
 
 public class ApiStepDefs {
 
-    private String response;
+    private Response response;
 
     @Given("^I make a GET request to \"([^\"]*)\"$")
     public void iMakeAGetRequestTo(String endpoint) throws Exception {
-        response = ApiUtils.RestApiUtil.getRequest("https://reqres.in/api/users", "page=2");
+        response = ApiUtils.getRequest("https://reqres.in/api/users", "page=2");
     }
 
     @Then("^I should get a successful response$")
     public void iShouldGetASuccessfulResponse() {
-        //int statusCode = response.getStatusCode();
-        //assertEquals(200, statusCode);
+        int statusCode = response.getStatusCode();
+        assertEquals(200, statusCode);
     }
 }
+
