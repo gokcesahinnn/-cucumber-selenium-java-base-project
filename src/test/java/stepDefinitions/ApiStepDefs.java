@@ -20,6 +20,7 @@ public class ApiStepDefs {
     public void iShouldGetASuccessfulResponse() {
         int statusCode = response.getStatusCode();
         assertEquals(200, statusCode);
+        String responseBody = response.getBody().asString();
     }
 }
 
