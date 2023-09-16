@@ -1,5 +1,6 @@
 package utilities;
 
+import config.BaseConfig;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,10 +23,10 @@ public class Driver {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (ConfigReader.getProperty("browser")) {
+            switch (BaseConfig.getInstance().getBrowser()) {
                 case "chrome":
                     ops.addArguments("--remote-allow-origins=*");
-                    if (ConfigReader.getProperty("headlessMode").equalsIgnoreCase("true")) ops.addArguments("--headless");
+                    if (BaseConfig.getInstance().getHeadless()) ops.addArguments("--headless");
                     WebDriverManager.chromedriver().clearDriverCache().setup();
                     driver = new ChromeDriver(ops);
                     break;

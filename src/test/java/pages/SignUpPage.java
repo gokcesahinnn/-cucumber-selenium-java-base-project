@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigReader;
+import utilities.DataGenerator;
 import utilities.Driver;
 import utilities.PageHelper;
 
@@ -68,8 +69,8 @@ public class SignUpPage extends BasePage {
     }
 
     public void fillNameAndEmail() {
-        nameBox.sendKeys(ConfigReader.getProperty("name"));
-        email.sendKeys(faker.internet().emailAddress());
+        nameBox.sendKeys(DataGenerator.generateRandomName());
+        email.sendKeys(DataGenerator.generateRandomEmail());
     }
 
     public void clickSignUpButton() {
@@ -78,11 +79,11 @@ public class SignUpPage extends BasePage {
 
     public void fillUserInformation() {
         genderText.click();
-        passwordBox.sendKeys(faker.internet().password());
+        passwordBox.sendKeys(DataGenerator.createPassword());
         PageHelper.pageDown();
-        days.sendKeys(ConfigReader.getProperty("birthday"));
-        month.sendKeys(ConfigReader.getProperty("birthMonth"));
-        year.sendKeys(ConfigReader.getProperty("birthYear"));
+        days.sendKeys(DataGenerator.generateRandomBirthday());
+        month.sendKeys(DataGenerator.generateRandomBirthMonth());
+        year.sendKeys(DataGenerator.generateRandomBirthYear());
     }
 
     public void selectAllCheckBox() {
@@ -92,7 +93,7 @@ public class SignUpPage extends BasePage {
 
     public void fillUserAddressInformation() {
         actions = new Actions(Driver.getDriver());
-        actions.click(firstNameBox).sendKeys(ConfigReader.getProperty("name")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("lastname")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("company")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("address")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("address2")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("country")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("state")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("city")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("zipCode")).sendKeys(Keys.TAB).sendKeys(ConfigReader.getProperty("mobileNumber")).perform();
+        actions.click(firstNameBox).sendKeys(DataGenerator.generateRandomName()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomSurname()).sendKeys(Keys.TAB).sendKeys("kloia").sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomAddress()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomAddress()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomCountry()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomCountry()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomCity()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomZipCode()).sendKeys(Keys.TAB).sendKeys(DataGenerator.generateRandomPhoneNumber()).perform();
     }
 
     public void clickCreateAccountButton() {

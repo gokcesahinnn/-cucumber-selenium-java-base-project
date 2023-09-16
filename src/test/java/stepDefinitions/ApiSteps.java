@@ -7,7 +7,7 @@ import utilities.ApiUtils;
 
 import static org.junit.Assert.assertEquals;
 
-public class ApiStepDefs {
+public class ApiSteps {
 
     private Response response;
 

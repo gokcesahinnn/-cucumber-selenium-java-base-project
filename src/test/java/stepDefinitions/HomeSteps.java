@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import config.BaseConfig;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -19,7 +20,7 @@ public class HomeSteps {
     @Then("verify that home page is visible successfully")
     public void verify_that_home_page_is_visible_successfully() {
         String expectedUrl = webDriver.getCurrentUrl();
-        String actualUrl = ConfigReader.getProperty("url");
+        String actualUrl = BaseConfig.getInstance().getUrl();
         Assert.assertEquals(expectedUrl, actualUrl);
     }
 

@@ -1,9 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utilities.PageHelper;
 
 public class HomePage extends BasePage {
 
@@ -12,10 +14,10 @@ public class HomePage extends BasePage {
     }
 
     @FindBy(css = ".fa.fa-lock")
-    public static WebElement signUpButton;
+    public WebElement signUpButton;
 
-    public static void clickSignUpButton() {
-        signUpButton.click();
+    public void clickSignUpButton() {
+        PageHelper.clickElement(signUpButton);
     }
 
 }
