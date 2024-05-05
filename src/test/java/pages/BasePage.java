@@ -2,7 +2,6 @@ package pages;
 
 import config.BaseConfig;
 import org.openqa.selenium.support.PageFactory;
-import utilities.ConfigReader;
 import utilities.Driver;
 
 
